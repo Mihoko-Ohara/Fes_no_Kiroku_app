@@ -1932,6 +1932,144 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FesComponent.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/FesComponent.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      fes: [],
+      keyword: '',
+      new_title: '',
+      new_day: '',
+      new_place: '',
+      new_band: '',
+      new_comment: ''
+    };
+  },
+  computed: {
+    searchItems: function searchItems() {
+      var fes = [];
+
+      for (var i in this.fes) {
+        var live = this.fes[i]; //入力ない場合は全て表示
+
+        if (this.keyword == '') {
+          fes.push(live);
+        } else {
+          if (live.title && live.title.indexOf(this.keyword) !== -1 || live.day && live.day.indexOf(this.keyword) !== -1) {
+            fes.push(live);
+          }
+        }
+      }
+
+      return fes;
+    }
+  },
+  methods: {
+    fetchfes: function fetchfes() {
+      var _this = this;
+
+      //←axios.get で fes リストを取得
+      axios.get('/api/get').then(function (response) {
+        _this.fes = response.data; //← 取得した fes リストを fes に格納
+      });
+    },
+    addFes: function addFes() {
+      var _this2 = this;
+
+      axios.post('/api/add', {
+        title: this.new_title,
+        day: this.new_day,
+        place: this.new_place,
+        band: this.new_band,
+        comment: this.new_comment
+      }).then(function (response) {
+        _this2.fes = response.data;
+        _this2.new_title = '';
+        _this2.new_day = '';
+        _this2.new_place = '';
+        _this2.new_band = '';
+        _this2.new_comment = '';
+      });
+    },
+    deleteFes: function deleteFes(fes_id) {
+      var _this3 = this;
+
+      //← 追記
+      axios.post('/api/del', {
+        id: fes_id
+      }).then(function (response) {
+        _this3.fes = response.data;
+      });
+    }
+  },
+  created: function created() {
+    //← インスタンス生成時に fetchfes()を実行したいので、created フックに登録
+    this.fetchfes();
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -37554,6 +37692,260 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FesComponent.vue?vue&type=template&id=6b1c4198&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/FesComponent.vue?vue&type=template&id=6b1c4198& ***!
+  \***************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "content" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "fes_record" }, [
+      _c("div", { staticClass: "fes_record_box" }, [
+        _c("div", [
+          _c("p", [_vm._v("フェスのなまえ")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.new_title,
+                expression: "new_title"
+              }
+            ],
+            staticClass: "input_title",
+            attrs: { type: "text" },
+            domProps: { value: _vm.new_title },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.new_title = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("p", [_vm._v("日付")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.new_day,
+                expression: "new_day"
+              }
+            ],
+            staticClass: "input_day",
+            attrs: { type: "date" },
+            domProps: { value: _vm.new_day },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.new_day = $event.target.value
+              }
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "fes_record_box" }, [
+        _c("div", [
+          _c("p", [_vm._v("好きになったバンド")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.new_band,
+                expression: "new_band"
+              }
+            ],
+            staticClass: "input_band",
+            attrs: { type: "text" },
+            domProps: { value: _vm.new_band },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.new_band = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("p", [_vm._v("場所")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.new_place,
+                expression: "new_place"
+              }
+            ],
+            staticClass: "input_place",
+            attrs: { type: "text" },
+            domProps: { value: _vm.new_place },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.new_place = $event.target.value
+              }
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("p", [_vm._v("コメント")]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.new_comment,
+            expression: "new_comment"
+          }
+        ],
+        staticClass: "input_comment",
+        attrs: { type: "text" },
+        domProps: { value: _vm.new_comment },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.new_comment = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "add_btn",
+          attrs: { type: "button" },
+          on: { click: _vm.addFes }
+        },
+        [_vm._v("記録する")]
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "fes_search" }, [
+      _c("p", [_vm._v("キーワードで検索")]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.keyword,
+            expression: "keyword"
+          }
+        ],
+        attrs: { type: "text", placeholder: "フェスのなまえ、日付を入力" },
+        domProps: { value: _vm.keyword },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.keyword = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "fes_card" }, [
+      _c(
+        "div",
+        { staticClass: "fes_card_inner" },
+        _vm._l(_vm.searchItems, function(live) {
+          return _c("div", { key: live.id, staticClass: "fes_card_list" }, [
+            _c("div", { staticClass: "box" }, [
+              _c("small", [
+                _vm._v(_vm._s(live.day) + " " + _vm._s(live.place))
+              ]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "/" + live.id } }, [
+                _c("h2", [_vm._v(_vm._s(live.title))])
+              ]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [
+                  _vm._v("好きになったバンド"),
+                  _c("br"),
+                  _vm._v(_vm._s(live.band))
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v("コメント"),
+                  _c("br"),
+                  _vm._v(_vm._s(live.comment))
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "delete_btn",
+                  on: {
+                    click: function($event) {
+                      return _vm.deleteFes(live.id)
+                    }
+                  }
+                },
+                [_vm._v("削除")]
+              )
+            ])
+          ])
+        }),
+        0
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "fes_desc" }, [
+      _c("p", [
+        _vm._v("あなたが行ったフェスやライブの大切な思い出をいつまでも残そう")
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -49753,6 +50145,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+Vue.component('fes-component', __webpack_require__(/*! ./components/FesComponent.vue */ "./resources/js/components/FesComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -49874,6 +50267,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/FesComponent.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/FesComponent.vue ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FesComponent_vue_vue_type_template_id_6b1c4198___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FesComponent.vue?vue&type=template&id=6b1c4198& */ "./resources/js/components/FesComponent.vue?vue&type=template&id=6b1c4198&");
+/* harmony import */ var _FesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FesComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/FesComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FesComponent_vue_vue_type_template_id_6b1c4198___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FesComponent_vue_vue_type_template_id_6b1c4198___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/FesComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/FesComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/FesComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./FesComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FesComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/FesComponent.vue?vue&type=template&id=6b1c4198&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/FesComponent.vue?vue&type=template&id=6b1c4198& ***!
+  \*********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FesComponent_vue_vue_type_template_id_6b1c4198___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./FesComponent.vue?vue&type=template&id=6b1c4198& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FesComponent.vue?vue&type=template&id=6b1c4198&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FesComponent_vue_vue_type_template_id_6b1c4198___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FesComponent_vue_vue_type_template_id_6b1c4198___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

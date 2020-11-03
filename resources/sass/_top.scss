@@ -1,0 +1,84 @@
+.fes{
+    &_desc{
+        p{
+            font-size: 12px;
+            text-align: center;
+        }
+    }
+
+    &_record{
+        font-size: 15px;
+        max-width: 510px;
+        margin: 0px auto 20px auto;
+        &_box{
+            display: flex;
+        }
+        .input{
+                border-radius:20px;
+                &_title{
+                    width: 328px;
+                    height: 25px;
+                    margin-right: 20px;
+                }
+                &_day{
+                    width: 159px;
+                    height: 25px;
+                }
+                &_band{
+                    width: 328px;
+                    height: 25px;
+                    margin-right: 20px;
+                }
+                &_place{
+                    width: 159px;
+                    height: 25px;
+                }
+                &_comment{
+                    width: 328px;
+                    height: 40px;
+                    margin-right: 40px;
+                }
+        }
+        .add_btn{
+            border-radius:20px;
+            height: 40px;
+            font-size: 17px;
+            background-color: #1f1f1f;
+            color: #f3f3f3;
+        }
+    }
+
+    &_search{
+        max-width: 510px;
+        height: 80px;
+        margin: 0 auto;
+        font-size: 15px;
+        color: #f3f3f3;
+        background-color: #1f1f1f;
+        margin-bottom: 20px;
+        padding: 5px;
+            input{
+                border-radius: 20px;
+                width: 500px;
+                height: 20px;
+        }
+    }
+
+    &_card{
+        background-color: #EEEEEE;
+        &_inner{
+            max-width: 1060px;
+            margin: 0 auto;
+        }
+        &_list{
+            display: inline-flex;
+        }
+        .box{
+            width: 487px;
+            height: 290px;
+            background-color: #f3f3f3;
+            margin: 20px;
+            // box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
+        }
+    }
+}
