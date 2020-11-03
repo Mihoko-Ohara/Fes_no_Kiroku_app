@@ -67,6 +67,15 @@
     background-color: #f3f3f3;
     margin: 20px; }
 
+.shadow {
+  display: none; }
+
+.flex-shrink-0 {
+  display: none; }
+
+.space-x-8 {
+  display: none; }
+
 .fes_footer {
   background-color: #1F1F1F;
   height: 40px; }
