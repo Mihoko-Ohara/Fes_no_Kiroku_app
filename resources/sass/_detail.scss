@@ -1,0 +1,42 @@
+body{
+    background-color: #f3f3f3;
+}
+.detail{
+    &_content{
+        background-color: #f3f3f3;
+    }
+    &_inner{
+        max-width: 750px;
+        height: 500px;
+        margin: 0 auto 50px auto;
+        padding: 40px;
+        box-shadow: 0px 2px 4px #0000000D;
+        background-color: #ffffff;
+        small{
+            font-size: 20px;
+        }
+        h2{
+            font-size: 40px;
+            border-bottom: solid 3px #dfdddd;
+            position: relative;
+        }
+        h2:after {
+            position: absolute;
+            content: " ";
+            display: block;
+            border-bottom: solid 3px #585757;
+            bottom: -3px;
+            width: 20%;
+        }
+        li{
+            list-style: none;
+        }
+        span{
+            font-weight: bold;
+            font-size: 20px;
+        }
+    }
+    &_list{
+        margin: 10px;
+    }
+}

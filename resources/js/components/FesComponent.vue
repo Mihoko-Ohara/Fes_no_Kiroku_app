@@ -1,9 +1,6 @@
 <template>
     <div class="content">
         <h1 class="fes_no_kiroku fes_wf-nicomoji">フェスのきろく</h1>
-        <div class="fes_desc">
-            <!-- <p>あなたが行ったフェスやライブの大切な思い出をいつまでも残そう</p> -->
-        </div>
         <div class="fes_record">
             <div class="fes_record_box">
                 <div>
@@ -42,16 +39,16 @@
         <div class="fes_card">
             <div class="fes_card_inner">
                 <div v-for="live in searchItems" v-bind:key="live.id" class="fes_card_list">
-                    <div class="box">
-                        <small>{{ live.day }}</small>
-                        <a v-bind:href="`/${live.id}`"><h2>{{ live.title }}</h2></a>
-                        <small>at {{ live.place }}</small>
-                        <ul>
-                            <li>好きになったバンド<br>{{ live.band }}</li>
-                            <li>コメント<br>{{ live.comment }}</li>
-                        </ul>
-                        <button v-on:click="deleteFes(live.id)" class="delete_btn">削除</button>
-                    </div>
+                        <a v-bind:href="`/${live.id}`">
+                            <div class="box">
+                                <small>{{ live.day }}</small>
+                                <h2>{{ live.title }}</h2>
+                                <small>at {{ live.place }}</small>
+                            </div>
+                        </a>
+                        <button v-on:click="deleteFes(live.id)" class="delete_btn">
+                            <img src="../../../public/img/trash_box.svg" alt="削除">
+                        </button>
                 </div>
             </div>
         </div>

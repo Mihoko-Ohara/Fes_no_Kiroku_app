@@ -1,12 +1,29 @@
+body{
+    margin: 0!important;
+}
 .fes{
     &_header{
-        background-color: #1F1F1F;
+        background-color: #f3f3f3;
+        padding-top: 100px;
+        padding-bottom: 50px;
         h1{
-            color: #F3F3F3;
+            color: #1f1f1f;
             margin: 0;
             text-align: center;
             font-size: 22px;
         }
+        a{
+            text-decoration: none;
+        }
+    }
+    &_no_kiroku{
+        color: #1f1f1f;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    &_wf-nicomoji{
+        font-family: "Nico Moji";
+        font-size: 6rem!important;
     }
 }
 

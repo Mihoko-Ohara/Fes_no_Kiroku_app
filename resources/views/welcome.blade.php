@@ -4,10 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>フェスのきろく</title>
+
+        <!-- css -->
+        <link rel="stylesheet" href="css/fes.css">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -21,22 +25,34 @@
         </style>
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+
+            <div class="fes_top_title">
+                <h1 class="fes_no_kiroku_top fes_wf-nicomoji">フェスのきろく</h1>
+                <p class="fes_desc">あなたが行ったフェスやライブの思い出を記録するための音楽ブログ</p>
+            </div>
+
+
+        <div class="relative flex items-top justify-center min-h-screen sm:items-center sm:pt-0 back-color">
             @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                <div class="hidden px-6 py-4 sm:block fes_top_btn">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
+                        <a href="{{ url('/dashboard') }}" class="fes_btn_blog">記録する</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+                        <a href="{{ route('login') }}" class="fes_btn_login">ログイン</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                            <a href="{{ route('register') }}" class="fes_btn_register ml-4">新規登録</a>
                         @endif
                     @endif
                 </div>
             @endif
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+            <!-- <div class="fes_top_title">
+                <h1 class="fes_no_kiroku_top fes_wf-nicomoji">フェスのきろく</h1>
+                <p class="fes_desc">あなたが行ったフェスやライブの大切な思い出をいつまでも残そう</p>
+            </div> -->
+
+            <!-- <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
                         <g clip-path="url(#clip0)" fill="#EF3B2D">
@@ -125,7 +141,7 @@
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </body>

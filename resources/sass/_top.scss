@@ -2,15 +2,6 @@
     background: #f3f3f3;
 }
 .fes{
-    &_no_kiroku{
-        color: #1f1f1f;
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    &_wf-nicomoji{
-        font-family: "Nico Moji";
-        font-size: 6rem;
-    }
     &_desc{
         p{
             font-size: 12px;
@@ -105,19 +96,22 @@
 
     &_card{
         background-color: #EEEEEE;
+        padding-bottom: 40px;
         &_inner{
-            max-width: 1060px;
+            max-width: 860px;
             margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
         }
         &_list{
-            display: inline-flex;
+            width: 50%;
         }
         .box{
-            width: 487px;
-            height: 290px;
+            width: 400px;
             background-color: #f3f3f3;
-            margin: 20px;
+            margin: 20px 20px 10px 20px;
             padding: 20px;
+            box-shadow: 0px 2px 4px #0000000D;
             small{
                 font-weight: bold;
             }
@@ -125,6 +119,12 @@
                 font-weight: bold;
                 font-size: 35px;
             }
+        }
+        .delete_btn{
+            width: 25px;
+            height: 25px;
+            margin-left: 390px;
+            margin-bottom: 20px;
         }
     }
 }

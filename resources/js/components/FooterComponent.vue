@@ -1,5 +1,7 @@
 <template>
-    <footer class="fes_footer"></footer>
+    <footer class="fes_footer">
+        <p>フェスのきろく</p>
+    </footer>
 </template>
 
 <script>

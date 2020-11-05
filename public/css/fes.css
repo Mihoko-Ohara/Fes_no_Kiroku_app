@@ -1,21 +1,28 @@
+body {
+  margin: 0 !important; }
+
 .fes_header {
-  background-color: #1F1F1F; }
+  background-color: #f3f3f3;
+  padding-top: 100px;
+  padding-bottom: 50px; }
   .fes_header h1 {
-    color: #F3F3F3;
+    color: #1f1f1f;
     margin: 0;
     text-align: center;
     font-size: 22px; }
-
-.content {
-  background: #f3f3f3; }
-
+  .fes_header a {
+    text-decoration: none; }
 .fes_no_kiroku {
   color: #1f1f1f;
   text-align: center;
   margin-bottom: 40px; }
 .fes_wf-nicomoji {
   font-family: "Nico Moji";
-  font-size: 6rem; }
+  font-size: 6rem !important; }
+
+.content {
+  background: #f3f3f3; }
+
 .fes_desc p {
   font-size: 12px;
   text-align: center; }
@@ -87,23 +94,31 @@
     margin: 0 auto;
     color: #000000; }
 .fes_card {
-  background-color: #EEEEEE; }
+  background-color: #EEEEEE;
+  padding-bottom: 40px; }
   .fes_card_inner {
-    max-width: 1060px;
-    margin: 0 auto; }
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; }
   .fes_card_list {
-    display: inline-flex; }
+    width: 50%; }
   .fes_card .box {
-    width: 487px;
-    height: 290px;
+    width: 400px;
     background-color: #f3f3f3;
-    margin: 20px;
-    padding: 20px; }
+    margin: 20px 20px 10px 20px;
+    padding: 20px;
+    box-shadow: 0px 2px 4px #0000000D; }
     .fes_card .box small {
       font-weight: bold; }
     .fes_card .box h2 {
       font-weight: bold;
       font-size: 35px; }
+  .fes_card .delete_btn {
+    width: 25px;
+    height: 25px;
+    margin-left: 390px;
+    margin-bottom: 20px; }
 
 .shadow {
   display: none; }
@@ -118,7 +133,98 @@
   background: #f3f3f3; }
 
 .fes_footer {
-  background-color: #1F1F1F;
-  height: 40px; }
+  background-color: #f3f3f3;
+  height: 40px;
+  border-top: 1px solid #CEC9C9; }
+  .fes_footer p {
+    color: #1f1f1f;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 10px;
+    margin: 0 !important; }
+
+body {
+  background-color: #f3f3f3; }
+
+.detail_content {
+  background-color: #f3f3f3; }
+.detail_inner {
+  max-width: 750px;
+  height: 500px;
+  margin: 0 auto 50px auto;
+  padding: 40px;
+  box-shadow: 0px 2px 4px #0000000D;
+  background-color: #ffffff; }
+  .detail_inner small {
+    font-size: 20px; }
+  .detail_inner h2 {
+    font-size: 40px;
+    border-bottom: solid 3px #dfdddd;
+    position: relative; }
+  .detail_inner h2:after {
+    position: absolute;
+    content: " ";
+    display: block;
+    border-bottom: solid 3px #585757;
+    bottom: -3px;
+    width: 20%; }
+  .detail_inner li {
+    list-style: none; }
+  .detail_inner span {
+    font-weight: bold;
+    font-size: 20px; }
+.detail_list {
+  margin: 10px; }
+
+.back-color {
+  background-color: #f3f3f3; }
+
+.fes_top_title {
+  margin-top: 150px; }
+
+.fes_no_kiroku_top {
+  color: #1f1f1f;
+  text-align: center;
+  margin: 0; }
+
+.fes_desc {
+  color: #1f1f1f;
+  font-size: 18px;
+  text-align: center; }
+
+.fes_top_btn {
+  position: relative;
+  top: -350px;
+  display: flex; }
+
+.fes_btn_login {
+  color: #dfdddd;
+  font-weight: bold;
+  background-color: #585757;
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px; }
+
+.fes_btn_register {
+  color: #1f1f1f;
+  font-weight: bold;
+  background-color: #dfdddd;
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px; }
+
+.fes_btn_blog {
+  color: #dfdddd;
+  font-weight: bold;
+  background-color: #585757;
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px; }
+
+.w-16 {
+  display: none !important; }
 
 /*# sourceMappingURL=fes.css.map */
