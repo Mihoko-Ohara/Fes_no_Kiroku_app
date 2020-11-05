@@ -1993,6 +1993,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37738,7 +37746,11 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "content" }, [
-    _vm._m(0),
+    _c("h1", { staticClass: "fes_no_kiroku fes_wf-nicomoji" }, [
+      _vm._v("フェスのきろく")
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "fes_desc" }),
     _vm._v(" "),
     _c("div", { staticClass: "fes_record" }, [
       _c("div", { staticClass: "fes_record_box" }, [
@@ -37849,39 +37861,44 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("p", [_vm._v("コメント")]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.new_comment,
-            expression: "new_comment"
-          }
-        ],
-        staticClass: "input_comment",
-        attrs: { type: "text" },
-        domProps: { value: _vm.new_comment },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+      _c("div", { staticClass: "fes_record_box" }, [
+        _c("div", [
+          _c("p", [_vm._v("コメント")]),
+          _vm._v(" "),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.new_comment,
+                expression: "new_comment"
+              }
+            ],
+            staticClass: "input_comment",
+            domProps: { value: _vm.new_comment },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.new_comment = $event.target.value
+              }
             }
-            _vm.new_comment = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "add_btn",
-          attrs: { type: "button" },
-          on: { click: _vm.addFes }
-        },
-        [_vm._v("記録する")]
-      )
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c(
+            "button",
+            {
+              staticClass: "add_btn",
+              attrs: { type: "button" },
+              on: { click: _vm.addFes }
+            },
+            [_vm._v("記録する")]
+          )
+        ])
+      ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "fes_search" }, [
@@ -37916,13 +37933,13 @@ var render = function() {
         _vm._l(_vm.searchItems, function(live) {
           return _c("div", { key: live.id, staticClass: "fes_card_list" }, [
             _c("div", { staticClass: "box" }, [
-              _c("small", [
-                _vm._v(_vm._s(live.day) + " " + _vm._s(live.place))
-              ]),
+              _c("small", [_vm._v(_vm._s(live.day))]),
               _vm._v(" "),
               _c("a", { attrs: { href: "/" + live.id } }, [
                 _c("h2", [_vm._v(_vm._s(live.title))])
               ]),
+              _vm._v(" "),
+              _c("small", [_vm._v("at " + _vm._s(live.place))]),
               _vm._v(" "),
               _c("ul", [
                 _c("li", [
@@ -37958,18 +37975,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "fes_desc" }, [
-      _c("p", [
-        _vm._v("あなたが行ったフェスやライブの大切な思い出をいつまでも残そう")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

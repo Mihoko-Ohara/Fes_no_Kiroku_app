@@ -1,7 +1,8 @@
 <template>
     <div class="content">
+        <h1 class="fes_no_kiroku fes_wf-nicomoji">フェスのきろく</h1>
         <div class="fes_desc">
-            <p>あなたが行ったフェスやライブの大切な思い出をいつまでも残そう</p>
+            <!-- <p>あなたが行ったフェスやライブの大切な思い出をいつまでも残そう</p> -->
         </div>
         <div class="fes_record">
             <div class="fes_record_box">
@@ -24,9 +25,15 @@
                     <input type="text" v-model="new_place" class="input_place">
                 </div>
             </div>
-            <p>コメント</p>
-            <input type="text" v-model="new_comment" class="input_comment">
-            <button type="button" v-on:click="addFes" class="add_btn">記録する</button>
+            <div class="fes_record_box">
+                <div>
+                    <p>コメント</p>
+                    <textarea v-model="new_comment" class="input_comment"></textarea>
+                </div>
+                <div>
+                    <button type="button" v-on:click="addFes" class="add_btn">記録する</button>
+                </div>
+            </div>
         </div>
         <div class="fes_search">
             <p>キーワードで検索</p>
@@ -36,8 +43,9 @@
             <div class="fes_card_inner">
                 <div v-for="live in searchItems" v-bind:key="live.id" class="fes_card_list">
                     <div class="box">
-                        <small>{{ live.day }} {{ live.place }}</small>
+                        <small>{{ live.day }}</small>
                         <a v-bind:href="`/${live.id}`"><h2>{{ live.title }}</h2></a>
+                        <small>at {{ live.place }}</small>
                         <ul>
                             <li>好きになったバンド<br>{{ live.band }}</li>
                             <li>コメント<br>{{ live.comment }}</li>

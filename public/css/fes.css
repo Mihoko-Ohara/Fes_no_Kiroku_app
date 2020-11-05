@@ -6,54 +6,86 @@
     text-align: center;
     font-size: 22px; }
 
+.content {
+  background: #f3f3f3; }
+
+.fes_no_kiroku {
+  color: #1f1f1f;
+  text-align: center;
+  margin-bottom: 40px; }
+.fes_wf-nicomoji {
+  font-family: "Nico Moji";
+  font-size: 6rem; }
 .fes_desc p {
   font-size: 12px;
   text-align: center; }
 .fes_record {
   font-size: 15px;
-  max-width: 510px;
+  max-width: 820px;
   margin: 0px auto 20px auto; }
   .fes_record_box {
     display: flex; }
-  .fes_record .input {
-    border-radius: 20px; }
-    .fes_record .input_title {
-      width: 328px;
-      height: 25px;
-      margin-right: 20px; }
-    .fes_record .input_day {
-      width: 159px;
-      height: 25px; }
-    .fes_record .input_band {
-      width: 328px;
-      height: 25px;
-      margin-right: 20px; }
-    .fes_record .input_place {
-      width: 159px;
-      height: 25px; }
-    .fes_record .input_comment {
-      width: 328px;
-      height: 40px;
-      margin-right: 40px; }
+  .fes_record input {
+    border-radius: 10px;
+    border: 1px solid #CEC9C9; }
+  .fes_record textarea {
+    border-radius: 10px;
+    border: 1px solid #CEC9C9; }
+  .fes_record p {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #585757; }
+  .fes_record .input_title {
+    width: 550px;
+    height: 45px;
+    margin-right: 40px;
+    margin-bottom: 30px; }
+  .fes_record .input_day {
+    width: 230px;
+    height: 45px;
+    margin-bottom: 30px; }
+  .fes_record .input_band {
+    width: 550px;
+    height: 45px;
+    margin-right: 40px;
+    margin-bottom: 30px; }
+  .fes_record .input_place {
+    width: 230px;
+    height: 45px;
+    margin-bottom: 30px; }
+  .fes_record .input_comment {
+    width: 550px;
+    height: 90px;
+    margin-right: 170px;
+    margin-bottom: 30px; }
   .fes_record .add_btn {
     border-radius: 20px;
-    height: 40px;
+    height: 80px;
+    width: 100px;
+    margin-top: 35px;
     font-size: 17px;
     background-color: #1f1f1f;
     color: #f3f3f3; }
 .fes_search {
-  max-width: 510px;
-  height: 80px;
+  max-width: 820px;
+  height: 120px;
   margin: 0 auto;
   font-size: 15px;
   color: #f3f3f3;
   background-color: #1f1f1f;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
   padding: 5px; }
+  .fes_search p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 13px 0px 10px 25px; }
   .fes_search input {
-    border-radius: 20px;
-    width: 500px;
-    height: 20px; }
+    border-radius: 10px;
+    width: 760px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    color: #000000; }
 .fes_card {
   background-color: #EEEEEE; }
   .fes_card_inner {
@@ -65,7 +97,13 @@
     width: 487px;
     height: 290px;
     background-color: #f3f3f3;
-    margin: 20px; }
+    margin: 20px;
+    padding: 20px; }
+    .fes_card .box small {
+      font-weight: bold; }
+    .fes_card .box h2 {
+      font-weight: bold;
+      font-size: 35px; }
 
 .shadow {
   display: none; }
@@ -75,6 +113,9 @@
 
 .space-x-8 {
   display: none; }
+
+.min-h-screen .border-b {
+  background: #f3f3f3; }
 
 .fes_footer {
   background-color: #1F1F1F;

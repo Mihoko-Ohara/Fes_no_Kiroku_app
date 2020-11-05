@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Laravel Vue FileUpload</title>
-	<!-- <link rel="stylesheet" href="{{ mix('css/app.css') }}"> -->
+    <title>フェスのきろく</title>
 	<link rel="stylesheet" href="css/fes.css">
+	<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <header-component></header-component>
         <fes-component></fes-component>
         <footer-component></footer-component>
     </div>
