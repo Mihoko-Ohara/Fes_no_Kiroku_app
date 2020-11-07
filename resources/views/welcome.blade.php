@@ -29,7 +29,7 @@
 
             <div class="fes_top_title">
                 <h1 class="fes_no_kiroku_top fes_wf-nicomoji">フェスのきろく</h1>
-                <p class="fes_desc">あなたが行ったフェスやライブの思い出を記録するための音楽ブログ</p>
+                <p class="fes_desc">あなたが行ったフェスやライブの思い出を共有できる音楽ブログ</p>
             </div>
 
 
