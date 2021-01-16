@@ -24,7 +24,7 @@
 - email:gu44@ponp.be　　
 - password:12345678
 
-#　技術一覧
+# 技術一覧
 
 - Vue.js
 - Laravel
